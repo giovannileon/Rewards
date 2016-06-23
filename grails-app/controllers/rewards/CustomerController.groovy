@@ -87,24 +87,13 @@ class CustomerController {
 	def customerLookup(Customer lookupInstance){
 		def (customerInstance,welcomeMessage)= calculationService.processCheckin(lookupInstance)
 		render (view:"checkin", model:[customerInstance: customerInstance, welcomeMessage:welcomeMessage])
-		
-		
-		
-		//Query customer by phonenumber
-		//if no result
-		// create a new customer
-		// Create a welcome message
-		//add award records
-		//save customer
-		//send welcome to kiosk
-		
-		//if customer found
-		// calcutate total points
-		// Create a welcome message
-		//add award records
-		//save customer
-		//send welcome to kiosk
 	}
+	def profile(){
+		def customerInstance = Customer.findByPhone(params.id)
+		[customerInstance:customerInstance]
+	}
+	def updateProfile(){
 	
-	
+	}
+		
 }
