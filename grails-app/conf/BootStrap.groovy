@@ -22,6 +22,15 @@ class BootStrap {
 		new rewards.Customer(phone: 4085551212, firstName: "Ida", lastName: "Goodson", totalPoints: 4).save()
 		new rewards.Customer(phone: 8015551234, firstName: "Bumble Bee", lastName: "Smith", totalPoints: 5).save()
 		new rewards.Customer(phone: 4315551212, firstName: "Sippie", lastName: "Wallace", totalPoints: 4).save()
+		
+		
+		if (Person.count() == 0) {
+			personService.createPerson('John', 'Doe',20)
+			personService.createPerson('Jane','Smith',18)
+			personService.createPerson('Scott','Robinson',42)
+			personService.createPerson('Leon','Juan Andres',8)
+
+		}
     }
     def destroy = {
     }
